@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import { useQuery } from 'react-query';
 
@@ -10,14 +11,14 @@ import { UsersList } from './components/UsersList';
 
 function App() {
   const { data, isLoading } = useQuery('users', getUsers);
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <Layout>
       <Container>
         <Title>Users List</Title>
-        <SearchInput placeholder="Search by user name.." />
-        <UsersList users={[1,2]} />
-        {console.log('query data', data, isLoading)}
+        <SearchInput placeholder="Search by user name.." value={inputValue} handleChange={setInputValue} />
+        <UsersList users={data} filterBy={inputValue} />
         <ClipLoader loading={isLoading}/>
       </Container>
     </Layout>
