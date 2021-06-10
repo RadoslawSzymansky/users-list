@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 16px;
-    font-family: 'Inter', serif;
+    font-family: 'Lato', serif;
   }
 
   * {
@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
   body, main {
     overflow-x: hidden;
+    font-family: 'Lato', serif;
   }
 
   a {

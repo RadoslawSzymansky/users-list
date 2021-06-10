@@ -8,6 +8,7 @@ const theme = {
     dp_3: '0px 8px 20px -4px rgba(65, 58, 145, 0.08);',
   },
   colors: {
+    primary: "#AAA",
     blue: '#437FDD',
     blueDark: '#282A46',
     cyan: '#E8FFFF',
