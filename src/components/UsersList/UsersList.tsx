@@ -5,24 +5,25 @@ import { User } from './usersList.types';
 
 type Props = {
   users?: User[],
-  filterBy: "",
+  filterBy: '',
 };
 
 const UsersList: FC<Props> = ({ users, filterBy }) => {
-    const list = users || [];
-    const filteredList = list.filter( ({name, username}) => `${name} ${username}`.toLowerCase().includes(filterBy.toLowerCase()))
+  const list = users || [];
+  const filteredList = list.filter(({ name, username }) => `${name} ${username}`.toLowerCase().includes(filterBy.toLowerCase()));
 
-    return (
-      <UsersListWrapper>
-        {
-          filteredList
+  return (
+    <UsersListWrapper>
+      {
+        filteredList
           .map(({ id, name, username }) => (
-            <Li key={id}>{name}<span>{username}</span></Li>
+            <Li key={id}>
+              {name}
+              <span>{username}</span>
+            </Li>
           ))
-        }
-      </UsersListWrapper>
-    )
-  }
-;
-
+      }
+    </UsersListWrapper>
+  );
+};
 export default UsersList;

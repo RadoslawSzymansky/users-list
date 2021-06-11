@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@components": [
+        "components/index"
+      ],
+      "@layout/*": [
+        "layout/*"
+      ],
+      "@layout": [
+        "layout/index"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@api": [
+        "api/index"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@styles": [
+        "styles/index"
+      ],
+      "@primitives/*": [
+        "primitives/*"
+      ],
+      "@primitives": [
+        "primitives/index"
+      ]
+    }
+  }
+}
