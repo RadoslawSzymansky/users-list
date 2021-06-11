@@ -1,12 +1,7 @@
 import { FC } from 'react';
 
 import { UsersListWrapper, Li } from './usersList.styled';
-
-type User = {
-  id: string,
-  name: string,
-  username: string,
-}
+import { User } from './usersList.types';
 
 type Props = {
   users?: User[],

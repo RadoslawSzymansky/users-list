@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import { useQuery } from 'react-query';
 
-import { getUsers } from './api/index';
+import { fetchUsers } from './components/UsersList/usersList.api';
 import Layout from "./layout/layout";
 import Container from "./primitives/Container/Container";
 import Title from "./components/Title/Title";
@@ -10,7 +10,7 @@ import { SearchInput } from './components/SearchInput';
 import { UsersList } from './components/UsersList';
 
 function App() {
-  const { data, isLoading } = useQuery('users', getUsers);
+  const { data, isLoading } = useQuery('users', fetchUsers);
   const [inputValue, setInputValue] = useState("");
 
   return (

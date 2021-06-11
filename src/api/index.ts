@@ -1,18 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
-import { users } from './urls';
+export const getData = async (endpoint: string): Promise<AxiosResponse> => {
+  const request = await axios.get(endpoint);
 
-type User = {
-  id: string,
-  name: string,
-  username: string,
-};
-
-const getUsers = async (): Promise<User[]> => {
-  const { data } = await axios.get(users);
-  return data;
-};
-
-export {
-  getUsers,
+  return request;
 };
