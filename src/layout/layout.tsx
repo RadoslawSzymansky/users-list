@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from '../styles/GlobalStyle';
+import GlobalStyles from '@styles/GlobalStyle';
 
-import theme from '../styles/theme';
+import theme from '@styles/theme';
 
 type Props = {
   children: JSX.Element | JSX.Element[];
