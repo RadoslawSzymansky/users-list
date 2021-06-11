@@ -15,14 +15,16 @@ type Props = {
 
 const UsersList: FC<Props> = ({ users, filterBy }) => {
     const list = users || [];
-
     const filteredList = list.filter( ({name, username}) => `${name} ${username}`.toLowerCase().includes(filterBy.toLowerCase()))
 
     return (
       <UsersListWrapper>
-        {filteredList.map(({ id, name, username }) => (
-          <Li key={id}>{name}<span>{username}</span></Li>
-        ))}
+        {
+          filteredList
+          .map(({ id, name, username }) => (
+            <Li key={id}>{name}<span>{username}</span></Li>
+          ))
+        }
       </UsersListWrapper>
     )
   }
