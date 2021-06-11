@@ -1,17 +1,28 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { UsersListWrapper, Li } from './usersList.styled';
+import { User } from './usersList.types';
 
 type Props = {
-  users: [],
+  users?: User[],
+  filterBy: "",
 };
 
-const UsersList: FC<Props> = ({ users }) => (
-  <UsersListWrapper>
-    {users.map( e => (
-      <Li>{e}</Li>
-    ) )}
-  </UsersListWrapper>
-);
+const UsersList: FC<Props> = ({ users, filterBy }) => {
+    const list = users || [];
+    const filteredList = list.filter( ({name, username}) => `${name} ${username}`.toLowerCase().includes(filterBy.toLowerCase()))
+
+    return (
+      <UsersListWrapper>
+        {
+          filteredList
+          .map(({ id, name, username }) => (
+            <Li key={id}>{name}<span>{username}</span></Li>
+          ))
+        }
+      </UsersListWrapper>
+    )
+  }
+;
 
 export default UsersList;

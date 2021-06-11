@@ -55,7 +55,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   figcaption {
-    text-align: center;
     font-style: italic;
     font-size: 0.75rem;
     margin-top: 10px;
