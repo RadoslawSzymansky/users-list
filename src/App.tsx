@@ -9,9 +9,12 @@ import Title from '@components/Title/Title';
 import { SearchInput } from '@components/SearchInput';
 import { UsersList } from '@components/UsersList';
 
+let changeInputValue;
+
 function App() {
   const { data, isLoading } = useQuery('users', fetchUsers);
   const [inputValue, setInputValue] = useState('');
+  changeInputValue = setInputValue;
 
   return (
     <Layout>
@@ -24,5 +27,7 @@ function App() {
     </Layout>
   );
 }
+
+export { changeInputValue };
 
 export default App;
