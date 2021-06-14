@@ -34,13 +34,13 @@ describe('list people', () => {
   it('render with empty data', async () => {
     const { getByText } = render(<UsersList filterBy='' users={[]} />);
 
-    expect(getByText('there are no users')).toBeInTheDocument();
+    expect(getByText('Sorry, there are no users..')).toBeInTheDocument();
   });
 
   it('render with incorrect data', async () => {
     const { getByText } = render(<UsersList filterBy='' users={undefined} />);
 
-    expect(getByText('there are no users')).toBeInTheDocument();
+    expect(getByText('Sorry, there are no users..')).toBeInTheDocument();
   });
 
 

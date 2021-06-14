@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 16px;
-    font-family: 'Lato', serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   * {
@@ -14,13 +14,18 @@ const GlobalStyle = createGlobalStyle`
 
   body, main {
     overflow-x: hidden;
-    font-family: 'Lato', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f9f9fa;
   }
 
   a {
     transition: .5s;
     cursor: pointer;
     text-decoration: none;
+  }
+
+  input,textarea {
+    font-family: inherit;
   }
 
   h2 {
