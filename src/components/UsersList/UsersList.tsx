@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { UsersListWrapper, Li } from './usersList.styled';
+import { UsersListWrapper, Li, Avatar, StyledP, UserName, Address } from './usersList.styled';
 import { User } from './usersList.types';
 
 export type Props = {
@@ -16,15 +16,24 @@ export const UsersList: FC<Props> = ({ users, filterBy }) => {
     <UsersListWrapper>
       {
         filteredList
-          .map(({ id, name, username }) => (
+          .map(({ id, name, username, address: { city, street, suite } }) => (
             <Li key={id}>
-              {name}
-              <span>@{username}</span>
+              <Avatar className="avatar">
+                  {name[0]}
+              </Avatar>
+              <div>
+                <div>
+                  {name}
+                  <UserName>@{username}</UserName>
+                </div>
+                <Address>
+                  {`${city}, ${street}, ${suite}`}
+                </Address>
+              </div>
             </Li>
           ))
       }
-
-      {!filteredList.length ? <p>there are no users</p> : null }
+      {!filteredList.length ? <StyledP>Sorry, there are no users..</StyledP> : null }
     </UsersListWrapper>
   );
 };
