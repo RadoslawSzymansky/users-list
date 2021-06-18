@@ -12,9 +12,15 @@ import { UsersList } from '@components/UsersList';
 let changeInputValue;
 
 function App() {
-  const { data, isLoading } = useQuery('users', fetchUsers);
+  const { data, isLoading, isError, error } = useQuery('users', fetchUsers);
   const [inputValue, setInputValue] = useState('');
   changeInputValue = setInputValue;
+
+  console.log('is', isError, error)
+
+  if (isError) {
+    return <p>There was an error</p>
+  }
 
   return (
     <Layout>
